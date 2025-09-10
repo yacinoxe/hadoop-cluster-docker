@@ -1,13 +1,12 @@
 ## Présentation
 
-Ces contenaires ont été initialement issus de https://github.com/kiwenlau/hadoop-cluster-docker
+Ce projet déploie un environnement Big Data complet sous Docker, basé sur Ubuntu.
+Il inclut les plateformes suivantes :
 
-Un cluster de trois contenaires est créé, avec comme plateformes installées:
-
-  * [Apache Hadoop](http://hadoop.apache.org/) Version: 2.7.2
-  * [Apache Spark](https://spark.apache.org/) Version: 2.2.1
-  * [Apache Kafka](https://kafka.apache.org/) Version 2.11-1.0.2 
-  * [Apache HBase](https://hbase.apache.org/) Version 1.4.8
+  * [Apache Hadoop](http://hadoop.apache.org/) Version: 3.3.6
+  * [Apache Spark](https://spark.apache.org/) Version: 3.5.0
+  * [Apache Kafka](https://kafka.apache.org/) Version 3.6.1 (Scala 2.13)
+  * [Apache HBase](https://hbase.apache.org/) Version 2.5.8
 
 
 ## Lancement des contenaires
@@ -27,7 +26,3 @@ cd docker_compose
 docker compose up
 ```
 
-Pour des tutoriaux détaillés sur la façon d'utiliser ces contenaires, visiter:
-https://insatunisia.github.io/TP-BigData
-
-Bonne lecture!
