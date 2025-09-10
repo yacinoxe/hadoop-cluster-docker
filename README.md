@@ -26,7 +26,12 @@ cd docker_compose
 docker compose up
 ```
 
+##  Automatisation du lancement d’un mini cluster
+- Le docker-compose.yml
+Automatise le lancement d’un mini cluster Big Data complet (Hadoop + Spark + Kafka + HBase), où : /
 
+  * Le master gère les métadonnées, Spark master, Kafka broker et HBase master.
+  * Les workers exécutent les tâches (HDFS Datanodes + YARN NodeManagers).
+  * Tous sont reliés via le réseau hadoop.
 
-
-** Ces contenaires ont été initialement issus de https://github.com/kiwenlau/hadoop-cluster-docker , Un grand merci @ kiwenlau & Lilia
+** Ces contenaires ont été initialement issus de kiwenlau/hadoop-cluster-docker , Un grand merci @ kiwenlau & Lilia
