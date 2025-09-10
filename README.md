@@ -26,4 +26,8 @@ cd docker_compose
 docker compose up
 ```
 
-- Ces contenaires ont été initialement issus de https://github.com/kiwenlau/hadoop-cluster-docker , Un grand merci @ kiwenlau & Lilia
+
+
+
+
+- * Ces contenaires ont été initialement issus de https://github.com/kiwenlau/hadoop-cluster-docker , Un grand merci @ kiwenlau & Lilia
