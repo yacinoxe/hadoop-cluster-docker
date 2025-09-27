@@ -2,8 +2,7 @@
 
 
 # On part d’une image Ubuntu "propre" comme base.
-FROM ubuntu:latest
-
+FROM ubuntu:14.04
 
 # Le répertoire de travail par défaut sera /root. Toutes les commandes RUN, COPY, etc. s’exécutent à partir d’ici.
 WORKDIR /root
