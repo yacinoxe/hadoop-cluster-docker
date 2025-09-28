@@ -1,0 +1,30 @@
+FROM openjdk:8-jdk
+
+# Version Hadoop
+ENV HADOOP_VERSION=3.3.6
+ENV HADOOP_HOME=/opt/hadoop
+ENV PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+  
+# Install dépendances de base
+RUN apt-get update && \
+    apt-get install -y ssh rsync curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# Téléchargement et installation Hadoop
+RUN curl -L https://dlcdn.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz \
+    | tar -xz -C /opt && \
+    mv /opt/hadoop-${HADOOP_VERSION} ${HADOOP_HOME}
+
+# Config SSH (Hadoop en pseudo-distribué a besoin de SSH)
+RUN ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa && \
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
+    chmod 600 ~/.ssh/authorized_keys
+
+# (Optionnel) Copie des fichiers de configuration Hadoop
+# Si tu veux personnaliser core-site.xml, hdfs-site.xml, etc.
+# Crée un dossier "config/" à côté du Dockerfile et décommente :
+# COPY config/* $HADOOP_HOME/etc/hadoop/
+
+WORKDIR $HADOOP_HOME
+
+CMD ["bash"]
